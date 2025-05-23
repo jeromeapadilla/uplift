@@ -3,70 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Business Websites</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Uplift</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Professional Business Websites Starting at $299 CAD</h1>
-        <p>We help your business look great online in under 7 days.</p>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="https://via.placeholder.com/40x40" alt="WebCraft Logo">
+                    Uplift
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <section class="pricing">
-        <h2>Our Pricing Packages</h2>
-        <div class="pricing-tiers">
-            <div class="tier">
-                <h3>Basic</h3>
-                <p>$299 CAD</p>
-                <ul>
-                    <li>1-page site</li>
-                    <li>Mobile responsive</li>
-                    <li>Contact form</li>
-                    <li>3 days delivery</li>
-                </ul>
-                <button class="cta-button">Choose Plan</button>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Business Websites Starting at $299 CAD</h1>
+                <p>We help your business look great online in under 7 days with modern, responsive designs that attract customers and grow your brand.</p>
+                <div class="hero-btns">
+                    <a href="#pricing" class="btn">View Pricing</a>
+                    <a href="#contact" class="btn btn-secondary">Get a Free Quote</a>
+                </div>
             </div>
-            <div class="tier">
-                <h3>Advanced</h3>
-                <p>$499 CAD</p>
-                <ul>
-                    <li>3-5 pages</li>
-                    <li>SEO</li>
-                    <li>Contact + gallery or services page</li>
-                    <li>5 days delivery</li>
-                </ul>
-                <button class="cta-button">Choose Plan</button>
-            </div>
-            <div class="tier">
-                <h3>Premium</h3>
-                <p>$799+ CAD</p>
-                <ul>
-                    <li>5+ pages</li>
-                    <li>Blog or eCommerce ready</li>
-                    <li>Custom design</li>
-                    <li>7–10 days delivery</li>
-                </ul>
-                <button class="cta-button">Choose Plan</button>
+            <img src="https://via.placeholder.com/800x600" alt="Website illustration" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="animate">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Website Design</h3>
+                    <p>Custom, responsive designs that look great on all devices and help convert visitors into customers.</p>
+                </div>
+                <div class="service-card animate" style="transition-delay: 0.2s">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Optimized structure and content to help your site rank higher in search engine results.</p>
+                </div>
+                <div class="service-card animate" style="transition-delay: 0.4s">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Perfectly responsive designs that work flawlessly on smartphones and tablets.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send</button>
-        </form>
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="animate">Simple Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card animate">
+                    <h3>Basic</h3>
+                    <div class="price">$299 <span>CAD</span></div>
+                    <ul class="pricing-features">
+                        <li>1-page website</li>
+                        <li>Mobile responsive</li>
+                        <li>Contact form</li>
+                        <li>Basic SEO</li>
+                        <li>3-day delivery</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card popular animate" style="transition-delay: 0.2s">
+                    <h3>Advanced</h3>
+                    <div class="price">$499 <span>CAD</span></div>
+                    <ul class="pricing-features">
+                        <li>3-5 page website</li>
+                        <li>Advanced SEO</li>
+                        <li>Contact + gallery/services</li>
+                        <li>Social media integration</li>
+                        <li>5-day delivery</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card animate" style="transition-delay: 0.4s">
+                    <h3>Premium</h3>
+                    <div class="price">$799+ <span>CAD</span></div>
+                    <ul class="pricing-features">
+                        <li>5+ page website</li>
+                        <li>Blog or eCommerce ready</li>
+                        <li>Custom design</li>
+                        <li>Premium support</li>
+                        <li>7-10 day delivery</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <script src="./script.js"></script>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="animate">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card animate">
+                    <div class="testimonial-content">
+                        <p>WebCraft delivered our new website faster than we expected and it's helped us attract more local customers. Highly recommend their services!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-img">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Boutique Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate" style="transition-delay: 0.2s">
+                    <div class="testimonial-content">
+                        <p>As a small business owner, I needed an affordable but professional website. WebCraft exceeded my expectations with their quality and service.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-img">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Restaurant Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate" style="transition-delay: 0.4s">
+                    <div class="testimonial-content">
+                        <p>The team was responsive and understood exactly what we needed. Our new website has already generated more leads in the first month.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa Rodriguez" class="author-img">
+                        <div class="author-info">
+                            <h4>Lisa Rodriguez</h4>
+                            <p>Consulting Firm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="animate">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info animate">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>123 Business Ave, Toronto, ON</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@webcraft.ca</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(416) 555-0192</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon-Fri: 9am - 5pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form animate" style="transition-delay: 0.2s">
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="basic">Basic Website ($299)</option>
+                                <option value="advanced">Advanced Website ($499)</option>
+                                <option value="premium">Premium Website ($799+)</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>WebCraft</h3>
+                    <p>Creating beautiful, functional websites for small businesses to help them grow online.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Website Design</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">E-commerce</a></li>
+                        <li><a href="#">Website Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./process.html">Our Process</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Support Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WebCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
