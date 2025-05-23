@@ -3,48 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | WebCraft</title>
+    <title>About Us | Uplift</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/about.css">
 </head>
 <body>
-    <!-- Same header as index.html -->
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="./Api-Base64-2025-05-23T16-00-08-683.png" alt="Uplift Logo" class="logo-img">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
     <section class="page-header">
         <div class="container">
-            <h1>About WebCraft</h1>
-            <p>Building digital experiences that help businesses thrive</p>
+            <h1 class="animate">About Uplift</h1>
+            <p class="animate" style="transition-delay: 0.2s">Building digital experiences that help businesses thrive</p>
         </div>
     </section>
 
     <section class="about-section">
         <div class="container">
             <div class="about-grid">
-                <div class="about-content">
+                <div class="about-content animate">
                     <h2>Our Story</h2>
-                    <p>Founded in 2015, WebCraft began as a small team of passionate web developers dedicated to helping local businesses establish their online presence. Today, we've grown into a full-service digital agency serving clients across North America.</p>
+                    <p>Founded in 2015, Uplift began as a small team of passionate web developers dedicated to helping local businesses establish their online presence. Today, we've grown into a full-service digital agency serving clients across North America.</p>
                     <p>Our mission remains the same: to deliver high-quality, affordable websites that help businesses connect with their customers and grow their brands.</p>
                 </div>
-                <div class="about-image">
-                    <img src="../images/team.jpg" alt="WebCraft team">
+                <div class="about-image animate" style="transition-delay: 0.2s">
+                    <img src="./images/team.jpg" alt="Uplift team">
                 </div>
             </div>
 
             <div class="values-section">
-                <h2>Our Values</h2>
+                <h2 class="animate">Our Values</h2>
                 <div class="values-grid">
-                    <div class="value-card">
+                    <div class="value-card animate">
                         <i class="fas fa-lightbulb"></i>
                         <h3>Innovation</h3>
                         <p>We stay ahead of industry trends to deliver cutting-edge solutions.</p>
                     </div>
-                    <div class="value-card">
+                    <div class="value-card animate" style="transition-delay: 0.2s">
                         <i class="fas fa-handshake"></i>
                         <h3>Integrity</h3>
                         <p>Honest communication and ethical business practices guide everything we do.</p>
                     </div>
-                    <div class="value-card">
+                    <div class="value-card animate" style="transition-delay: 0.4s">
                         <i class="fas fa-heart"></i>
                         <h3>Passion</h3>
                         <p>We love what we do and it shows in our work.</p>
@@ -54,8 +74,54 @@
         </div>
     </section>
 
-    <!-- Same footer as index.html -->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Uplift</h3>
+                    <p>Creating beautiful, functional websites for small businesses to help them grow online.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Website Design</a></li>
+                        <li><a href="index.html#services">SEO Optimization</a></li>
+                        <li><a href="index.html#services">E-commerce</a></li>
+                        <li><a href="index.html#services">Website Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="process.html">Our Process</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Support Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Uplift. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="./js/script.js"></script>
-    <script src="./js/about.js"></script>
 </body>
 </html>

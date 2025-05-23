@@ -117,24 +117,22 @@ header.scrolled {
 
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    transition: all 0.3s ease;
+    justify-content: space-between;
+    height: 105px; /* Reduced from 80px */
 }
 
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    text-decoration: none;
+    height: 100%; /* Takes full height of nav */
 }
 
-.logo img {
-    height: 40px;
-    margin-right: 10px;
+/* Logo Styles */
+.logo-img {
+    height: 100px; /* Adjust this value to make bigger/smaller */
+    width: auto; /* Maintains aspect ratio */
+    transition: all 0.3s ease; /* Smooth hover effect */
 }
 
 .nav-links {
@@ -173,9 +171,35 @@ nav {
     width: 100%;
 }
 
+
 .hamburger {
-    display: none;
+    display: none; /* Hide by default */
+    transition: all 0.3s ease;
+    z-index: 1001;
     cursor: pointer;
+}
+
+.hamburger.active {
+    transform: rotate(180deg);
+}
+
+.hamburger i {
+    transition: all 0.3s ease;
+}
+
+.hamburger.active i.fa-bars {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.hamburger.active i.fa-times {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.hamburger i.fa-times {
+    position: absolute;
+    opacity: 0;
 }
 
 /* Hero Section */
@@ -580,94 +604,138 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .hero-image {
-        width: 45%;
-    }
-}
-
+/* Mobile Responsive Improvements */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
+    /* Header & Navigation adjustments */
+    header {
+        padding: 5px 0; /* Reduced padding for mobile */
     }
-
-    h2 {
-        font-size: 1.8rem;
+    
+    nav {
+        height: 60px; /* Optimal height for mobile nav */
     }
-
-    section {
-        padding: 60px 0;
+    
+    .logo-img {
+        height: 50px; /* Better visibility on mobile */
     }
-
-    .hero {
-        height: auto;
-        padding: 120px 0 80px;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .hero-btns {
+    
+    /* Hamburger menu adjustments */
+    .hamburger {
+        display: flex;
+        align-items: center;
         justify-content: center;
+        width: 40px;
+        height: 40px;
+        font-size: 1.8rem; /* Slightly larger for better touch */
     }
-
-    .hero-image {
-        position: relative;
-        width: 100%;
-        margin-top: 50px;
-    }
-
+    
+    /* Mobile menu styling */
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 60px; /* Matches nav height */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 60px);
         background: white;
         flex-direction: column;
         align-items: center;
-        padding: 40px 0;
-        transition: all 0.5s ease;
+        padding: 20px 0;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
-
+    
     .nav-links.active {
         left: 0;
     }
-
+    
     .nav-links li {
         margin: 15px 0;
+        width: 100%;
+        text-align: center;
     }
-
-    .hamburger {
+    
+    .nav-links a {
         display: block;
-        font-size: 1.5rem;
-        color: var(--dark);
+        padding: 12px 20px;
+        font-size: 1.1rem;
     }
-
-    .pricing-card.popular {
-        transform: scale(1);
+    
+    /* Hero section adjustments */
+    .hero {
+        padding: 100px 0 60px; /* Adjusted for mobile nav */
     }
-}
-
-@media (max-width: 576px) {
-    h1 {
-        font-size: 2rem;
+    
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
     }
-
-    h2 {
-        font-size: 1.5rem;
+    
+    .hero p {
+        font-size: 1rem;
     }
-
+    
     .hero-btns {
         flex-direction: column;
         gap: 10px;
     }
-
+    
     .btn {
         width: 100%;
         text-align: center;
+    }
+    
+    /* Other section adjustments */
+    section {
+        padding: 50px 0;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Testimonials and cards */
+    .testimonial-grid,
+    .services-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    nav {
+        height: 55px; /* Slightly more compact */
+    }
+    
+    .logo-img {
+        height: 45px;
+    }
+    
+    .nav-links {
+        top: 55px;
+        height: calc(100vh - 55px);
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
     }
 }
