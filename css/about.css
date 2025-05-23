@@ -1,12 +1,3 @@
-/* About Page Specific Styles */
-
-
-:root {
-    --dark: #333333;
-    --gray: #666666;
-    --primary: #4a6bff;
-    --secondary: #6c5ce7;
-}
 
 .page-header {
     background: white;
