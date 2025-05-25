@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <!-- PayPal SDK for Hosted Buttons -->
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAdg5aB0agR31joLqqrtL5UpuCjTWPt9XPOglvL3CBFLMoswPLhEOTIPHQoBUzosK1FP90jJuIPcR1DQM&components=hosted-buttons&disable-funding=venmo&currency=CAD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAdg5aB0agR31joLqqrtL5UpuCjTWPt9XPOglvL3CBFLMoswPLhEOTIPHQoBUzosK1FP90jJuIPcR1DQM&currency=CAD"></script>
 </head>
 <body>
     <!-- Header -->
@@ -169,78 +169,45 @@
     <!-- Payment Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="animate">Get Started</h2>
+            <h2>Get Started</h2>
             <div class="contact-container">
-                <div class="contact-info animate">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <div>
-                            <h4>Secure Payment</h4>
-                            <p>50% downpayment to start your project, remaining 50% upon completion</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h4>Fast Turnaround</h4>
-                            <p>Projects typically completed within 5-7 business days</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <div>
-                            <h4>Support</h4>
-                            <p>Email: hello@webcraft.ca</p>
-                            <p>Mon-Fri: 9am - 5pm</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form animate" style="transition-delay: 0.2s">
+                <div class="contact-form">
                     <form id="payment-form">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
+                            <label for="name">Full Name*</label>
                             <input type="text" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email*</label>
                             <input type="email" id="email" class="form-control" required>
                         </div>
-                        
-                        <!-- Stacked PayPal Buttons -->
-                        <div class="payment-options">
-                            <div class="payment-option">
-                                <h3>Basic Website - $299 CAD</h3>
-                                <div id="paypal-container-basic"></div>
-                            </div>
-                            
-                            <div class="payment-option">
-                                <h3>Advanced Website - $499 CAD</h3>
-                                <div id="paypal-container-advanced"></div>
-                            </div>
-                            
-                            <div class="payment-option">
-                                <h3>Premium Website - $799+ CAD</h3>
-                                <div id="paypal-container-premium"></div>
-                            </div>
+                        <div class="form-group">
+                            <label for="package">Select Package*</label>
+                            <select id="package" class="form-control" required>
+                                <option value="">Choose a package</option>
+                                <option value="basic">Basic Website - $299 CAD</option>
+                                <option value="advanced">Advanced Website - $499 CAD</option>
+                                <option value="premium">Premium Website - $799+ CAD</option>
+                            </select>
                         </div>
-                        
                         <div class="form-group">
                             <label for="message">Project Details (Optional)</label>
                             <textarea id="message" class="form-control" placeholder="Tell us about your business and website needs..."></textarea>
                         </div>
                         
-                        <p class="payment-note">By proceeding, you agree to our <a href="#">Terms of Service</a></p>
+                        <!-- PayPal Button Container -->
+                        <div id="paypal-button-container" class="paypal-container"></div>
+                        
+                        <div class="form-notice">
+                            <p>By proceeding, you agree to our <a href="#">Terms of Service</a></p>
+                            <p class="secure-notice"><i class="fas fa-lock"></i> Secure Payment Processed by PayPal</p>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -291,5 +258,6 @@
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/payment.js"></script>
 </body>
 </html>
