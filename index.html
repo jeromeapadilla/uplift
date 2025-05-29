@@ -166,47 +166,55 @@
         </div>
     </section>
 
+
+    
     <!-- Payment Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Get Started</h2>
-            <div class="contact-container">
-                <div class="contact-form">
-                    <form id="payment-form">
-                        <div class="form-group">
-                            <label for="name">Full Name*</label>
-                            <input type="text" id="name" class="form-control" required>
+<section class="contact" id="contact">
+    <div class="container">
+        <h2>Get Started</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="name">Full Name*</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="package">Select Package*</label>
+                        <select id="package" class="form-control" required>
+                            <option value="">Choose a package</option>
+                            <option value="basic">Basic Website - $299 CAD</option>
+                            <option value="advanced">Advanced Website - $499 CAD</option>
+                            <option value="premium">Premium Website - $799+ CAD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details (Optional)</label>
+                        <textarea id="message" class="form-control" placeholder="Tell us about your business and website needs..."></textarea>
+                    </div>
+                    
+                    <!-- Square Payment Button Container -->
+                    <div id="square-payment-container" class="square-container">
+                        <div class="square-button-wrapper">
+                            <a id="square-payment-button" target="_blank" data-url="https://square.link/u/3OVcNw0X?src=embd" href="https://square.link/u/3OVcNw0X?src=embed" class="square-pay-button">
+                                Pay Now
+                            </a>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email*</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="package">Select Package*</label>
-                            <select id="package" class="form-control" required>
-                                <option value="">Choose a package</option>
-                                <option value="basic">Basic Website - $299 CAD</option>
-                                <option value="advanced">Advanced Website - $499 CAD</option>
-                                <option value="premium">Premium Website - $799+ CAD</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details (Optional)</label>
-                            <textarea id="message" class="form-control" placeholder="Tell us about your business and website needs..."></textarea>
-                        </div>
-                        
-                        <!-- PayPal Button Container -->
-                        <div id="paypal-button-container" class="paypal-container"></div>
-                        
-                        <div class="form-notice">
-                            <p>By proceeding, you agree to our <a href="#">Terms of Service</a></p>
-                            <p class="secure-notice"><i class="fas fa-lock"></i> Secure Payment Processed by PayPal</p>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    
+                    <div class="form-notice">
+                        <p>By proceeding, you agree to our <a href="#">Terms of Service</a></p>
+                        <p class="secure-notice"><i class="fas fa-lock"></i> Secure Payment Processed by Square</p>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
     <!-- Footer -->

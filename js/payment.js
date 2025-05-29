@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize form and payment system
     const paymentForm = document.getElementById('payment-form');
-    const paypalButtonContainer = document.getElementById('paypal-button-container');
+    const squarePaymentButton = document.getElementById('square-payment-button');
     const errorMessage = document.createElement('div');
     errorMessage.className = 'error-message';
     paymentForm.prepend(errorMessage);
@@ -13,85 +13,24 @@ document.addEventListener('DOMContentLoaded', function() {
         premium: { price: '799.00', name: 'Premium Website Package' }
     };
 
-    // Initialize PayPal buttons
-    function initPayPal() {
-        if (typeof paypal === 'undefined') {
-            setTimeout(initPayPal, 300);
-            return;
+    // Add click handler to Square button
+    squarePaymentButton.addEventListener('click', function(e) {
+        // Validate form first
+        if (!validateForm()) {
+            e.preventDefault();
+            return false;
         }
-
-        paypal.Buttons({
-            style: {
-                shape: 'rect',
-                color: 'gold',
-                layout: 'vertical',
-                label: 'paypal',
-                height: 48
-            },
-            createOrder: function(data, actions) {
-                // Validate form first
-                if (!validateForm()) {
-                    return false;
-                }
-
-                const selectedPackage = document.getElementById('package').value;
-                const packageDetails = packages[selectedPackage];
-
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: packageDetails.price,
-                            currency_code: 'CAD',
-                            breakdown: {
-                                item_total: {
-                                    value: packageDetails.price,
-                                    currency_code: 'CAD'
-                                }
-                            }
-                        },
-                        items: [{
-                            name: packageDetails.name,
-                            unit_amount: {
-                                value: packageDetails.price,
-                                currency_code: 'CAD'
-                            },
-                            quantity: '1',
-                            category: 'DIGITAL_GOODS'
-                        }],
-                        description: packageDetails.name
-                    }],
-                    application_context: {
-                        shipping_preference: 'NO_SHIPPING',
-                        user_action: 'PAY_NOW'
-                    }
-                });
-            },
-            onApprove: function(data, actions) {
-                // Show loading state
-                showLoading(true);
-                
-                return actions.order.capture().then(function(details) {
-                    // Process successful payment
-                    processSuccessfulPayment(details);
-                }).catch(function(err) {
-                    // Handle capture error
-                    showError('Payment processing failed. Please try again or contact support.');
-                    showLoading(false);
-                    console.error('Payment capture error:', err);
-                });
-            },
-            onError: function(err) {
-                showError('There was an error initializing the payment. Please try again.');
-                console.error('PayPal error:', err);
-            },
-            onClick: function() {
-                // Validate form when button is clicked
-                if (!validateForm()) {
-                    return false;
-                }
-            }
-        }).render(paypalButtonContainer);
-    }
+        
+        // Show loading state
+        showLoading(true);
+        
+        // In a real implementation, you might want to:
+        // 1. Submit form data to your server
+        // 2. Generate a unique order ID
+        // 3. Update the Square payment link with order details
+        
+        // For demo purposes, we'll just proceed with the static link
+    });
 
     // Form validation
     function validateForm() {
@@ -140,74 +79,30 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>Processing your payment...</p>
                     </div>
                 `;
-                paypalButtonContainer.insertAdjacentHTML('afterend', loadingHTML);
+                document.getElementById('square-payment-container').insertAdjacentHTML('afterend', loadingHTML);
             }
-            paypalButtonContainer.style.display = 'none';
+            squarePaymentButton.style.display = 'none';
         } else {
             if (loadingDiv) loadingDiv.remove();
-            paypalButtonContainer.style.display = 'block';
+            squarePaymentButton.style.display = 'inline-block';
         }
     }
 
-    // Process successful payment
-    function processSuccessfulPayment(details) {
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const package = document.getElementById('package').value;
-        const message = document.getElementById('message').value;
-        const packageDetails = packages[package];
+    // Check for payment success in URL parameters (for when user returns from Square)
+    function checkForSuccessfulPayment() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const transactionId = urlParams.get('transactionId');
         
-        // Submit data to server
-        submitOrderData({
-            name,
-            email,
-            message,
-            package: packageDetails.name,
-            amount: packageDetails.price,
-            transactionId: details.id,
-            payerEmail: details.payer.email_address,
-            payerId: details.payer.payer_id
-        }).then(() => {
-            // Show success message
-            showSuccessMessage(name, email, message, packageDetails, details.id);
-        }).catch(error => {
-            console.error('Submission error:', error);
-            showError('Payment succeeded but we couldn\'t save your details. Please contact us with your transaction ID.');
-            showLoading(false);
-        });
-    }
-
-    // Submit data to server
-    function submitOrderData(orderData) {
-        return new Promise((resolve, reject) => {
-            // In production, replace this with actual fetch to your backend
-            console.log('Submitting order data:', orderData);
-            
-            // Example using FormSubmit.co (uncomment and replace email)
-            /*
-            fetch('https://formsubmit.co/ajax/your-email@example.com', {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    ...orderData,
-                    _subject: `New Order: ${orderData.package}`
-                })
-            })
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.json();
-            })
-            .then(data => resolve(data))
-            .catch(error => reject(error));
-            */
-            
-            // For demo purposes, simulate successful submission
-            setTimeout(() => resolve({ status: 'success' }), 1500);
-        });
+        if (transactionId) {
+            // This would be where you verify the payment with your backend
+            showSuccessMessage(
+                urlParams.get('name') || 'Customer',
+                urlParams.get('email') || '',
+                urlParams.get('message') || '',
+                packages[urlParams.get('package')] || { name: 'Website Package', price: '' },
+                transactionId
+            );
+        }
     }
 
     // Show success message
@@ -240,6 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    // Initialize PayPal buttons
-    initPayPal();
+    // Check for successful payment on page load
+    checkForSuccessfulPayment();
 });
