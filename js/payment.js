@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 
                 <div class="success-actions">
-                    <a href="/" class="btn">Return Home</a>
-                    <a href="mailto:hello@webcraft.ca" class="btn btn-secondary">Contact Support</a>
+                    <a href="./" class="btn">Return Home</a>
+                    <a href="mailto:hello@upliftweb.ca" class="btn btn-secondary">Contact Support</a>
                 </div>
             </div>
         `;

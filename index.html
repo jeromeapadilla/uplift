@@ -3,264 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uplift - Professional Website Design</title>
+    <meta name="description" content="Uplift builds polished, mobile-friendly websites for small businesses in under 7 days, with clear pricing starting at $299 CAD.">
+    <title>Uplift | Small Business Websites Built in 7 Days</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <!-- PayPal SDK for Hosted Buttons -->
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAdg5aB0agR31joLqqrtL5UpuCjTWPt9XPOglvL3CBFLMoswPLhEOTIPHQoBUzosK1FP90jJuIPcR1DQM&currency=CAD"></script>
 </head>
 <body>
-    <!-- Header -->
     <header id="header">
         <div class="container">
-            <nav>
-                <a href="#" class="logo">
-                    <img src="./Api-Base64-2025-05-23T16-00-08-683.png" alt="Uplift Logo" class="logo-img">
+            <nav aria-label="Primary navigation">
+                <a href="#home" class="logo" aria-label="Uplift home">
+                    <img src="./Api-Base64-2025-05-23T16-00-08-683.png" alt="Uplift" class="logo-img">
                 </a>
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#work">What You Get</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Get Started</a></li>
+                    <li><a href="#contact">Start Project</a></li>
                 </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                    <i class="fas fa-times"></i>
-                </div>
+                <button class="hamburger" type="button" aria-label="Toggle menu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Professional Business Websites Starting at $299 CAD</h1>
-                <p>We help your business look great online in under 7 days with modern, responsive designs that attract customers and grow your brand.</p>
-                <div class="hero-btns">
-                    <a href="#pricing" class="btn">View Pricing</a>
-                    <a href="#contact" class="btn btn-secondary">Get Started</a>
-                </div>
-            </div>
-            <img src="https://via.placeholder.com/800x600" alt="" class="hero-image">
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="animate">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card animate">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="eyebrow">Fast websites for local brands</span>
+                    <h1>Launch a sharper business website in under 7 days.</h1>
+                    <p>Uplift designs clean, responsive websites that explain what you do, build trust quickly, and turn visitors into leads without agency-level pricing.</p>
+                    <div class="hero-btns" aria-label="Primary calls to action">
+                        <a href="#pricing" class="btn">View Packages</a>
+                        <a href="#contact" class="btn btn-secondary">Start My Website</a>
                     </div>
-                    <h3>Website Design</h3>
-                    <p>Custom, responsive designs that look great on all devices and help convert visitors into customers.</p>
-                </div>
-                <div class="service-card animate" style="transition-delay: 0.2s">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>SEO Optimization</h3>
-                    <p>Optimized structure and content to help your site rank higher in search engine results.</p>
-                </div>
-                <div class="service-card animate" style="transition-delay: 0.4s">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Friendly</h3>
-                    <p>Perfectly responsive designs that work flawlessly on smartphones and tablets.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <h2 class="animate">Simple Pricing</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card animate">
-                    <h3>Basic</h3>
-                    <div class="price">$299 <span>CAD</span></div>
-                    <ul class="pricing-features">
-                        <li>1-page website</li>
-                        <li>Mobile responsive</li>
-                        <li>Contact form</li>
-                        <li>Basic SEO</li>
-                        <li>3-day delivery</li>
+                    <ul class="hero-proof" aria-label="Service highlights">
+                        <li><strong>7 days</strong><span>typical launch</span></li>
+                        <li><strong>$299</strong><span>starting price</span></li>
+                        <li><strong>Mobile</strong><span>first design</span></li>
                     </ul>
-                    <a href="#contact" class="btn">Get Started</a>
                 </div>
-                <div class="pricing-card popular animate" style="transition-delay: 0.2s">
-                    <h3>Advanced</h3>
-                    <div class="price">$499 <span>CAD</span></div>
-                    <ul class="pricing-features">
-                        <li>3-5 page website</li>
-                        <li>Advanced SEO</li>
-                        <li>Contact + gallery/services</li>
-                        <li>Social media integration</li>
-                        <li>5-day delivery</li>
-                    </ul>
-                    <a href="#contact" class="btn">Get Started</a>
-                </div>
-                <div class="pricing-card animate" style="transition-delay: 0.4s">
-                    <h3>Premium</h3>
-                    <div class="price">$799+ <span>CAD</span></div>
-                    <ul class="pricing-features">
-                        <li>5+ page website</li>
-                        <li>Blog or eCommerce ready</li>
-                        <li>Custom design</li>
-                        <li>Premium support</li>
-                        <li>7-10 day delivery</li>
-                    </ul>
-                    <a href="#contact" class="btn">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="animate">What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card animate">
-                    <div class="testimonial-content">
-                        <p>Uplift delivered our new website faster than we expected and it's helped us attract more local customers. Highly recommend their services!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-img">
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Boutique Owner</p>
+                <div class="hero-visual" aria-label="Website preview">
+                    <div class="browser-shell">
+                        <div class="browser-top">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
-                    </div>
-                </div>
-                <div class="testimonial-card animate" style="transition-delay: 0.2s">
-                    <div class="testimonial-content">
-                        <p>As a small business owner, I needed an affordable but professional website. Uplift exceeded my expectations with their quality and service.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-img">
-                        <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>Restaurant Owner</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card animate" style="transition-delay: 0.4s">
-                    <div class="testimonial-content">
-                        <p>The team was responsive and understood exactly what we needed. Our new website has already generated more leads in the first month.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa Rodriguez" class="author-img">
-                        <div class="author-info">
-                            <h4>Lisa Rodriguez</h4>
-                            <p>Consulting Firm</p>
+                        <div class="mock-site">
+                            <div class="mock-hero">
+                                <div>
+                                    <span class="mock-label">New lead-ready website</span>
+                                    <h2>Book more jobs this month.</h2>
+                                </div>
+                                <button type="button">Request Quote</button>
+                            </div>
+                            <div class="mock-grid">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="mock-panel">
+                                <span></span>
+                                <strong>SEO, speed, mobile, and clear calls to action included.</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-heading animate">
+                    <span class="eyebrow">Services</span>
+                    <h2>Everything your first impression needs.</h2>
+                    <p>Each site is built to be easy to understand, easy to trust, and easy to act on.</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card animate">
+                        <div class="service-icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
+                        <h3>Custom Website Design</h3>
+                        <p>Modern layouts, clear copy sections, responsive pages, and calls to action tailored to your business.</p>
+                    </article>
+                    <article class="service-card animate" style="transition-delay: 0.12s">
+                        <div class="service-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+                        <h3>Local SEO Setup</h3>
+                        <p>Search-friendly structure, page titles, meta descriptions, performance basics, and content that matches what customers search for.</p>
+                    </article>
+                    <article class="service-card animate" style="transition-delay: 0.24s">
+                        <div class="service-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                        <h3>Fast Launch Support</h3>
+                        <p>A focused process that moves from brief to launch quickly, with revisions and setup help included.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    
-    <!-- Payment Section -->
-<section class="contact" id="contact">
-    <div class="container">
-        <h2>Get Started</h2>
-        <div class="contact-container">
-            <div class="contact-form">
-                <form id="payment-form">
-                    <div class="form-group">
-                        <label for="name">Full Name*</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="package">Select Package*</label>
-                        <select id="package" class="form-control" required>
-                            <option value="">Choose a package</option>
-                            <option value="basic">Basic Website - $299 CAD</option>
-                            <option value="advanced">Advanced Website - $499 CAD</option>
-                            <option value="premium">Premium Website - $799+ CAD</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Details (Optional)</label>
-                        <textarea id="message" class="form-control" placeholder="Tell us about your business and website needs..."></textarea>
-                    </div>
-                    
-                    <!-- Square Payment Button Container -->
-                    <div id="square-payment-container" class="square-container">
-                        <div class="square-button-wrapper">
-                            <a id="square-payment-button" target="_blank" data-url="https://square.link/u/3OVcNw0X?src=embd" href="https://square.link/u/3OVcNw0X?src=embed" class="square-pay-button">
-                                Pay Now
-                            </a>
+        <section class="outcomes" id="work">
+            <div class="container outcomes-grid">
+                <div class="section-heading animate">
+                    <span class="eyebrow">What You Get</span>
+                    <h2>A site that feels credible the moment it loads.</h2>
+                    <p>Uplift focuses on the practical pieces that make small business websites work: clear positioning, strong service pages, mobile polish, and simple next steps.</p>
+                </div>
+                <div class="outcome-list">
+                    <div class="outcome-item animate">
+                        <span>01</span>
+                        <div>
+                            <h3>Clear service story</h3>
+                            <p>Visitors quickly understand who you help, what you offer, and why they should contact you.</p>
                         </div>
                     </div>
-                    
-                    <div class="form-notice">
-                        <p>By proceeding, you agree to our <a href="#">Terms of Service</a></p>
-                        <p class="secure-notice"><i class="fas fa-lock"></i> Secure Payment Processed by Square</p>
+                    <div class="outcome-item animate" style="transition-delay: 0.12s">
+                        <span>02</span>
+                        <div>
+                            <h3>Conversion-ready layout</h3>
+                            <p>Buttons, forms, pricing, proof, and FAQs are placed where people naturally need them.</p>
+                        </div>
                     </div>
-                </form>
+                    <div class="outcome-item animate" style="transition-delay: 0.24s">
+                        <span>03</span>
+                        <div>
+                            <h3>Launch-ready foundation</h3>
+                            <p>Your site is responsive, organized, and prepared for future pages, ads, or SEO improvements.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <div class="section-heading animate">
+                    <span class="eyebrow">Pricing</span>
+                    <h2>Simple packages for small businesses.</h2>
+                    <p>Choose the level that matches what you need now. You can always grow the site later.</p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="pricing-card animate">
+                        <span class="plan-tag">Starter</span>
+                        <h3>Basic</h3>
+                        <div class="price">$299 <span>CAD</span></div>
+                        <p class="plan-summary">Best for a focused one-page presence.</p>
+                        <ul class="pricing-features">
+                            <li>1-page website</li>
+                            <li>Mobile responsive design</li>
+                            <li>Contact form section</li>
+                            <li>Basic SEO setup</li>
+                            <li>3-day delivery target</li>
+                        </ul>
+                        <a href="#contact" class="btn">Choose Basic</a>
+                    </article>
+                    <article class="pricing-card popular animate" style="transition-delay: 0.12s">
+                        <span class="popular-badge">Most Popular</span>
+                        <span class="plan-tag">Growth</span>
+                        <h3>Advanced</h3>
+                        <div class="price">$499 <span>CAD</span></div>
+                        <p class="plan-summary">Best for service businesses that need more detail.</p>
+                        <ul class="pricing-features">
+                            <li>3-5 page website</li>
+                            <li>Advanced SEO structure</li>
+                            <li>Services, gallery, or FAQ page</li>
+                            <li>Social media links</li>
+                            <li>5-day delivery target</li>
+                        </ul>
+                        <a href="#contact" class="btn">Choose Advanced</a>
+                    </article>
+                    <article class="pricing-card animate" style="transition-delay: 0.24s">
+                        <span class="plan-tag">Custom</span>
+                        <h3>Premium</h3>
+                        <div class="price">$799+ <span>CAD</span></div>
+                        <p class="plan-summary">Best for bigger sites or richer functionality.</p>
+                        <ul class="pricing-features">
+                            <li>5+ page website</li>
+                            <li>Blog or eCommerce ready</li>
+                            <li>Custom page sections</li>
+                            <li>Priority launch support</li>
+                            <li>7-10 day delivery target</li>
+                        </ul>
+                        <a href="#contact" class="btn">Choose Premium</a>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <!-- Footer -->
+        <section class="process-strip">
+            <div class="container process-grid">
+                <div class="process-step animate">
+                    <span>1</span>
+                    <h3>Send the brief</h3>
+                    <p>Tell us what you do, what pages you need, and what customers should do next.</p>
+                </div>
+                <div class="process-step animate" style="transition-delay: 0.12s">
+                    <span>2</span>
+                    <h3>Review the build</h3>
+                    <p>Get a polished draft, request edits, and approve the direction before launch.</p>
+                </div>
+                <div class="process-step animate" style="transition-delay: 0.24s">
+                    <span>3</span>
+                    <h3>Go live</h3>
+                    <p>Launch with responsive pages, clear calls to action, and a foundation you can keep improving.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-heading animate">
+                    <span class="eyebrow">Client Feedback</span>
+                    <h2>Built for business owners who need momentum.</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <article class="testimonial-card animate">
+                        <p>"The site immediately looked more professional, and the process was fast enough that I could keep running the business."</p>
+                        <div class="testimonial-author">
+                            <span>SJ</span>
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Boutique Owner</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial-card animate" style="transition-delay: 0.12s">
+                        <p>"Uplift made the offer, menu, and contact flow much clearer. Customers stopped asking the same basic questions."</p>
+                        <div class="testimonial-author">
+                            <span>MC</span>
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>Restaurant Owner</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial-card animate" style="transition-delay: 0.24s">
+                        <p>"The new website gave us a cleaner first impression and a better place to send leads from social media."</p>
+                        <div class="testimonial-author">
+                            <span>LR</span>
+                            <div>
+                                <h4>Lisa Rodriguez</h4>
+                                <p>Consulting Firm</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-copy animate">
+                    <span class="eyebrow">Start Project</span>
+                    <h2>Ready for a website that looks like you mean business?</h2>
+                    <p>Share a few details and choose a package. Payment is handled securely through Square, and the project can begin right after checkout.</p>
+                    <div class="contact-promise">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                        <span>Secure Square checkout</span>
+                    </div>
+                </div>
+                <div class="contact-form animate">
+                    <form id="payment-form">
+                        <div class="form-group">
+                            <label for="name">Full Name*</label>
+                            <input type="text" id="name" class="form-control" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" class="form-control" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="package">Select Package*</label>
+                            <select id="package" class="form-control" required>
+                                <option value="">Choose a package</option>
+                                <option value="basic">Basic Website - $299 CAD</option>
+                                <option value="advanced">Advanced Website - $499 CAD</option>
+                                <option value="premium">Premium Website - $799+ CAD</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about your business, pages, and launch goals..."></textarea>
+                        </div>
+
+                        <div id="square-payment-container" class="square-container">
+                            <div class="square-button-wrapper">
+                                <a id="square-payment-button" target="_blank" rel="noopener" data-url="https://square.link/u/3OVcNw0X?src=embd" href="https://square.link/u/3OVcNw0X?src=embed" class="square-pay-button">
+                                    Continue to Secure Payment
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="form-notice">
+                            <p>By proceeding, you agree to our <a href="#">Terms of Service</a>.</p>
+                            <p class="secure-notice"><i class="fas fa-shield-halved" aria-hidden="true"></i> Payment processed by Square</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
                     <h3>Uplift</h3>
-                    <p>Creating beautiful, functional websites for small businesses to help them grow online.</p>
+                    <p>Clean, conversion-focused websites for small businesses that need to look credible fast.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Website Design</a></li>
-                        <li><a href="#">SEO Optimization</a></li>
-                        <li><a href="#">E-commerce</a></li>
-                        <li><a href="#">Website Maintenance</a></li>
+                        <li><a href="#services">Website Design</a></li>
+                        <li><a href="#services">SEO Setup</a></li>
+                        <li><a href="#pricing">Packages</a></li>
+                        <li><a href="#contact">Start Project</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Company</h3>
                     <ul class="footer-links">
-                        <li><a href="">About Us</a></li>
-                        <li><a href="./process.html">Our Process</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./process.html">Process</a></li>
+                        <li><a href="./services/web-design.html">Web Design</a></li>
+                        <li><a href="./support/faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Support</h3>
+                    <h3>Contact</h3>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="mailto:hello@upliftweb.ca">hello@upliftweb.ca</a></li>
+                        <li><a href="#contact">Project Form</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Support Center</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Uplift. All rights reserved.</p>
+                <p>&copy; 2026 Uplift. All rights reserved.</p>
             </div>
         </div>
     </footer>
