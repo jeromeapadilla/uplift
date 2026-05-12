@@ -413,6 +413,98 @@ nav {
     margin-top: 12px;
 }
 
+
+.samples {
+    background: linear-gradient(180deg, #ffffff 0%, #f6f9fd 100%);
+}
+
+.samples-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sample-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: inherit;
+    min-height: 360px;
+    overflow: hidden;
+    padding: 0 0 72px;
+    position: relative;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.sample-card:hover {
+    border-color: rgba(36, 88, 230, 0.45);
+    box-shadow: var(--shadow);
+    transform: translateY(-6px);
+}
+
+.sample-thumb {
+    aspect-ratio: 16 / 10;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.sample-thumb::after {
+    background: linear-gradient(180deg, rgba(19, 32, 51, 0) 35%, rgba(19, 32, 51, 0.32) 100%);
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.sample-thumb-restaurant {
+    background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80");
+}
+
+.sample-thumb-personal {
+    background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80");
+}
+
+.sample-thumb-professional {
+    background-image: url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80");
+}
+
+.sample-type {
+    color: var(--blue);
+    display: inline-flex;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    margin: 0 28px 18px;
+    text-transform: uppercase;
+}
+
+.sample-card h3,
+.sample-card p {
+    margin-left: 28px;
+    margin-right: 28px;
+}
+
+.sample-card p {
+    margin-top: 12px;
+}
+
+.sample-link {
+    bottom: 28px;
+    color: var(--blue);
+    font-weight: 900;
+    left: 28px;
+    position: absolute;
+}
+
+.samples-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
 .outcomes {
     background: linear-gradient(180deg, #f6f9fd 0%, #ffffff 100%);
 }
@@ -895,6 +987,7 @@ footer {
     }
 
     .services-grid,
+    .samples-grid,
     .pricing-grid,
     .testimonial-grid,
     .process-grid,
@@ -958,6 +1051,7 @@ footer {
 
     .hero-proof,
     .services-grid,
+    .samples-grid,
     .pricing-grid,
     .testimonial-grid,
     .process-grid,
