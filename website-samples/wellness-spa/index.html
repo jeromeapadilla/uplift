@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luma Spa | Wellness Website Template</title>
+    <meta name="description" content="A premium wellness and spa website template for salons, spas, beauty studios, and massage therapists.">
+    <style>
+        :root {
+            --ink: #231f20;
+            --moss: #52624a;
+            --sage: #9cad8f;
+            --cream: #fbf8f1;
+            --rose: #d9aa9a;
+            --clay: #a96d58;
+            --line: rgba(35, 31, 32, 0.14);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+        }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+        .nav {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 0;
+        }
+        .brand { font-family: Georgia, serif; font-size: 1.55rem; letter-spacing: 0.04em; }
+        .nav-links { align-items: center; display: flex; gap: 24px; list-style: none; }
+        .nav-links a { color: rgba(35, 31, 32, 0.72); font-weight: 700; }
+        .button {
+            align-items: center;
+            background: var(--ink);
+            border-radius: 999px;
+            color: #fff;
+            display: inline-flex;
+            font-weight: 800;
+            min-height: 48px;
+            padding: 0 20px;
+        }
+        .button.light { background: #fff; color: var(--ink); }
+        .hero {
+            display: grid;
+            gap: 46px;
+            grid-template-columns: 0.95fr 1.05fr;
+            min-height: 720px;
+            padding: 50px 0 84px;
+            align-items: center;
+        }
+        .eyebrow {
+            color: var(--clay);
+            display: inline-flex;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(3.2rem, 8vw, 6.8rem);
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 0.94;
+        }
+        .hero p { color: rgba(35, 31, 32, 0.68); font-size: 1.15rem; margin: 24px 0 30px; max-width: 560px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        .hero-visual {
+            border-radius: 28px;
+            min-height: 640px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(35, 31, 32, 0.16);
+        }
+        .hero-visual img { height: 100%; object-fit: cover; position: absolute; inset: 0; width: 100%; }
+        .booking-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 18px;
+            bottom: 24px;
+            left: 24px;
+            padding: 20px;
+            position: absolute;
+            width: min(340px, calc(100% - 48px));
+        }
+        .booking-card strong { display: block; font-size: 1.15rem; margin-bottom: 6px; }
+        .booking-card span { color: rgba(35, 31, 32, 0.62); }
+        section { padding: 86px 0; }
+        .section-head { max-width: 700px; margin-bottom: 34px; }
+        h2 { font-family: Georgia, serif; font-size: clamp(2.2rem, 5vw, 4.6rem); font-weight: 500; line-height: 1; }
+        .services-grid, .ritual-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+        .service, .ritual {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            min-height: 230px;
+            padding: 26px;
+        }
+        .service span { color: var(--clay); display: block; font-weight: 900; margin-bottom: 18px; }
+        .service h3, .ritual h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .service p, .ritual p, .section-head p { color: rgba(35, 31, 32, 0.64); margin-top: 14px; }
+        .feature-band { background: var(--moss); color: #fff; overflow: hidden; }
+        .feature-grid { align-items: center; display: grid; gap: 42px; grid-template-columns: 1fr 1fr; }
+        .feature-grid h2, .feature-grid p { color: #fff; }
+        .feature-grid p { color: rgba(255, 255, 255, 0.76); font-size: 1.08rem; margin: 20px 0 28px; }
+        .feature-image { border-radius: 26px; overflow: hidden; aspect-ratio: 4 / 5; }
+        .feature-image img { height: 100%; object-fit: cover; width: 100%; }
+        .ritual { background: transparent; border-color: rgba(35, 31, 32, 0.18); }
+        .ritual-number { color: var(--clay); font-family: Georgia, serif; font-size: 2.6rem; line-height: 1; margin-bottom: 26px; }
+        .cta { background: #fff; border-top: 1px solid var(--line); text-align: center; }
+        .cta h2, .cta p { margin-left: auto; margin-right: auto; }
+        .cta p { color: rgba(35, 31, 32, 0.66); margin: 18px auto 28px; max-width: 620px; }
+        footer { border-top: 1px solid var(--line); padding: 28px 0; }
+        .footer-row { align-items: center; display: flex; justify-content: space-between; gap: 18px; }
+        .footer-row a { color: rgba(35, 31, 32, 0.64); font-weight: 800; }
+        @media (max-width: 880px) {
+            .nav-links { display: none; }
+            .hero, .feature-grid { grid-template-columns: 1fr; }
+            .hero { min-height: auto; padding-top: 28px; }
+            .hero-visual { min-height: 520px; }
+            .services-grid, .ritual-grid { grid-template-columns: 1fr; }
+            .footer-row { align-items: flex-start; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header class="container nav">
+        <a class="brand" href="../../index.html#samples">Luma Spa</a>
+        <ul class="nav-links">
+            <li><a href="#treatments">Treatments</a></li>
+            <li><a href="#rituals">Rituals</a></li>
+            <li><a href="#book">Book</a></li>
+        </ul>
+        <a class="button" href="#book">Reserve</a>
+    </header>
+
+    <main>
+        <section class="container hero">
+            <div>
+                <span class="eyebrow">Wellness and beauty template</span>
+                <h1>A calmer first impression for premium self-care brands.</h1>
+                <p>A polished website direction for spas, salons, estheticians, massage therapists, beauty studios, and wellness clinics that want to feel elevated and trustworthy.</p>
+                <div class="hero-actions">
+                    <a class="button" href="#treatments">Explore Treatments</a>
+                    <a class="button light" href="../../index.html#contact">Use This Template</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1400&q=80" alt="Relaxing spa treatment room">
+                <div class="booking-card">
+                    <strong>Signature Glow Facial</strong>
+                    <span>75 minutes · calming cleanse · sculpting massage · dewy finish</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="treatments">
+            <div class="section-head">
+                <span class="eyebrow">Treatments</span>
+                <h2>Make every service feel easy to choose.</h2>
+                <p>Clear service cards help customers compare options and book with confidence.</p>
+            </div>
+            <div class="services-grid">
+                <article class="service"><span>01</span><h3>Skin Rituals</h3><p>Facials, peels, masks, and glow treatments presented with simple benefits.</p></article>
+                <article class="service"><span>02</span><h3>Massage Therapy</h3><p>Relaxation, deep tissue, prenatal, and recovery sessions with clear durations.</p></article>
+                <article class="service"><span>03</span><h3>Beauty Studio</h3><p>Lashes, brows, waxing, nails, and makeup services with strong booking prompts.</p></article>
+            </div>
+        </section>
+
+        <section class="feature-band">
+            <div class="container feature-grid">
+                <div class="feature-image">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=80" alt="Spa stones and candle setup">
+                </div>
+                <div>
+                    <span class="eyebrow">Premium layout</span>
+                    <h2>Warm visuals, soft spacing, and strong booking flow.</h2>
+                    <p>This template balances atmosphere with action: beautiful imagery, clear treatment categories, trust-building copy, and booking calls to action throughout the page.</p>
+                    <a class="button light" href="#book">Book a Consultation</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="rituals">
+            <div class="section-head">
+                <span class="eyebrow">Experience</span>
+                <h2>Guide guests from curiosity to booking.</h2>
+            </div>
+            <div class="ritual-grid">
+                <article class="ritual"><div class="ritual-number">1</div><h3>Choose a treatment</h3><p>Help visitors find the right service without digging through a long list.</p></article>
+                <article class="ritual"><div class="ritual-number">2</div><h3>Understand the result</h3><p>Describe what they will feel, see, and receive after each appointment.</p></article>
+                <article class="ritual"><div class="ritual-number">3</div><h3>Reserve online</h3><p>Place booking prompts in the hero, services, and closing section.</p></article>
+            </div>
+        </section>
+
+        <section class="cta" id="book">
+            <div class="container">
+                <span class="eyebrow">Ready to adapt</span>
+                <h2>Use this look for your next wellness client.</h2>
+                <p>Swap the imagery, services, brand colors, and booking link to turn this into a finished client website.</p>
+                <a class="button" href="../../index.html#contact">Start With This Template</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-row">
+            <strong>Luma Spa Template</strong>
+            <a href="../index.html">Back to all templates</a>
+        </div>
+    </footer>
+</body>
+</html>
