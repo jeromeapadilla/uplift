@@ -85,7 +85,8 @@
 
         .reservation-card h2,
         .plate-card h3,
-        .experience-card h3 {
+        .experience-card h3,
+        .app-feature h3 {
             margin: 6px 0 10px;
             font-family: Georgia, serif;
             color: var(--ink);
@@ -163,7 +164,8 @@
 
         .plate-card p,
         .experience-card p,
-        .hours-card p {
+        .hours-card p,
+        .app-feature p {
             color: var(--muted);
             line-height: 1.7;
             margin: 0;
@@ -211,6 +213,143 @@
             color: #fffaf2;
         }
 
+        .app-download {
+            display: grid;
+            grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.75fr);
+            gap: 28px;
+            align-items: center;
+            border: 1px solid rgba(154, 67, 39, 0.18);
+            border-radius: 8px;
+            background: linear-gradient(135deg, #fffdf8 0%, #f2dfc9 100%);
+            padding: clamp(24px, 5vw, 56px);
+            overflow: hidden;
+        }
+
+        .store-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 178px;
+            border: 1px solid rgba(43, 23, 16, 0.18);
+            border-radius: 8px;
+            background: #171717;
+            color: #fffaf2;
+            padding: 12px 15px;
+            text-decoration: none;
+            box-shadow: 0 14px 30px rgba(23, 23, 23, 0.16);
+        }
+
+        .store-button svg {
+            width: 24px;
+            height: 24px;
+            flex: 0 0 auto;
+        }
+
+        .store-button span {
+            display: block;
+            color: rgba(255, 250, 242, 0.72);
+            font-size: 0.72rem;
+            line-height: 1;
+        }
+
+        .store-button strong {
+            display: block;
+            color: #fffaf2;
+            font-size: 1rem;
+            line-height: 1.15;
+        }
+
+        .app-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .app-feature {
+            border: 1px solid rgba(154, 67, 39, 0.16);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.66);
+            padding: 16px;
+        }
+
+        .phone-preview {
+            width: min(100%, 330px);
+            margin-inline: auto;
+            border: 10px solid #171717;
+            border-radius: 32px;
+            background: #fffaf2;
+            box-shadow: 0 32px 70px rgba(43, 23, 16, 0.24);
+            overflow: hidden;
+        }
+
+        .phone-screen {
+            min-height: 560px;
+            background: linear-gradient(180deg, #fff8ec, #f4e0ca);
+            padding: 18px;
+        }
+
+        .phone-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .phone-pill {
+            border-radius: 999px;
+            background: #2b1710;
+            color: #fffaf2;
+            font-size: 0.78rem;
+            font-weight: 900;
+            padding: 8px 11px;
+        }
+
+        .app-dish {
+            overflow: hidden;
+            border-radius: 8px;
+            background: #fffdf8;
+            box-shadow: 0 16px 28px rgba(76, 39, 23, 0.14);
+        }
+
+        .app-dish img {
+            width: 100%;
+            height: 178px;
+            object-fit: cover;
+        }
+
+        .app-dish div {
+            padding: 14px;
+        }
+
+        .app-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+            margin-top: 10px;
+            padding: 12px;
+        }
+
+        .app-row strong {
+            display: block;
+            color: var(--ink);
+        }
+
+        .app-row span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
         .experience-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -247,6 +386,7 @@
         @media (max-width: 900px) {
             .restaurant-hero,
             .feature-band,
+            .app-download,
             .hours-layout {
                 grid-template-columns: 1fr;
             }
@@ -263,7 +403,8 @@
 
             .section-header,
             .experience-grid,
-            .plate-grid {
+            .plate-grid,
+            .app-feature-grid {
                 grid-template-columns: 1fr;
                 display: grid;
             }
@@ -285,6 +426,16 @@
             .reservation-grid {
                 grid-template-columns: 1fr;
             }
+
+            .store-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .phone-preview {
+                border-width: 8px;
+                border-radius: 26px;
+            }
         }
     </style>
 </head>
@@ -294,6 +445,7 @@
             <a class="brand" href="../index.html">Marrow & Hearth</a>
             <ul>
                 <li><a href="#menu">Menu</a></li>
+                <li><a href="#app">App</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#visit">Visit</a></li>
                 <li><a class="back-link" href="../../index.html#samples">Uplift</a></li>
@@ -305,14 +457,14 @@
                 <div class="hero-copy reveal">
                     <span class="eyebrow">Modern restaurant service</span>
                     <h1>A warm dining room for dates, celebrations, and unforgettable neighborhood dinners.</h1>
-                    <p>Use this polished template for restaurants, cafes, bistros, caterers, and private chefs. It is built to sell the atmosphere first, then move guests toward the menu and reservations.</p>
+                    <p>Use this polished template for restaurants, cafes, bistros, caterers, and private chefs. It is built to sell the atmosphere first, then move guests toward the menu, mobile ordering, and reservations.</p>
                     <div class="hero-actions">
                         <a class="button" href="#visit">Reserve a Table</a>
-                        <a class="button secondary" href="#menu">Explore Menu</a>
+                        <a class="button secondary" href="#app">Get the App</a>
                     </div>
                     <div class="hero-badges" aria-label="Restaurant highlights">
                         <span>Seasonal menu</span>
-                        <span>Private dining</span>
+                        <span>iPhone & Android app</span>
                         <span>Open Tue-Sun</span>
                     </div>
                 </div>
@@ -381,6 +533,49 @@
                         <span>Chef-led kitchen</span>
                         <span>Natural wines</span>
                         <span>Locally sourced</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section app-download" id="app">
+                <div class="reveal">
+                    <span class="eyebrow">Mobile ordering app</span>
+                    <h2>Let guests order, reserve, and earn rewards from iPhone or Android.</h2>
+                    <p>Add this section when a restaurant wants to promote its own app, delivery experience, loyalty program, or QR ordering system. The buttons can later connect to real App Store and Google Play links.</p>
+                    <div class="store-buttons" aria-label="Mobile app download links">
+                        <a class="store-button" href="#contact" aria-label="Download on the App Store">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.1 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.7-1.8-3.3-1.8-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 7 1.1 9.2.8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.2-2.5 1.2-2.6 0-.1-2.6-1-2.6-3.6ZM14.9 5.9c.6-.8 1.1-1.8 1-2.9-1 .1-2.1.7-2.8 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2.1-.5 2.8-1.2Z"/></svg>
+                            <span>Download on the<strong>App Store</strong></span>
+                        </a>
+                        <a class="store-button" href="#contact" aria-label="Get it on Google Play">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m4.4 2.7 10.5 9.2L4.4 21.3c-.2-.3-.4-.7-.4-1.1V3.8c0-.4.1-.8.4-1.1Zm11.8 10.4 2.5 2.2-11 6.2 8.5-8.4Zm2.5-4.4-2.5 2.2-8.5-8.4 11 6.2Zm1.1 1.2 1.4.8c1 .6 1 2 0 2.6l-1.4.8-2.8-2.1 2.8-2.1Z"/></svg>
+                            <span>Get it on<strong>Google Play</strong></span>
+                        </a>
+                    </div>
+                    <div class="app-feature-grid">
+                        <article class="app-feature"><h3>Order ahead</h3><p>Pickup, delivery, and table-side QR ordering.</p></article>
+                        <article class="app-feature"><h3>Rewards</h3><p>Points, birthday offers, and regular guest perks.</p></article>
+                        <article class="app-feature"><h3>Reservations</h3><p>Book tables, join waitlists, and save favorites.</p></article>
+                    </div>
+                </div>
+
+                <div class="phone-preview reveal reveal-delay-1" aria-label="Mobile app preview">
+                    <div class="phone-screen">
+                        <div class="phone-top">
+                            <strong>Marrow App</strong>
+                            <span class="phone-pill">12 min pickup</span>
+                        </div>
+                        <div class="app-dish">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80" alt="Mobile app featured salad bowl">
+                            <div>
+                                <span class="eyebrow">Today only</span>
+                                <h3>Chef's lunch bowl</h3>
+                                <p>Greens, grains, roasted vegetables, herb yogurt, and smoked chili oil.</p>
+                            </div>
+                        </div>
+                        <div class="app-row"><div><strong>Table for 2</strong><span>Tonight at 7:15 PM</span></div><span>$0</span></div>
+                        <div class="app-row"><div><strong>Reward balance</strong><span>340 points available</span></div><span>Use</span></div>
+                        <div class="app-row"><div><strong>Reorder favorite</strong><span>Rigatoni and rosemary spritz</span></div><span>$33</span></div>
                     </div>
                 </div>
             </section>
