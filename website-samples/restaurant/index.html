@@ -3,52 +3,446 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cedar Table Template | Uplift Samples</title>
+    <title>Marrow & Hearth Restaurant Template | Uplift Samples</title>
     <link rel="stylesheet" href="../styles.css">
+    <style>
+        .restaurant-theme {
+            --accent: #9a4327;
+            --accent-dark: #552416;
+            --paper: #fffaf2;
+            --soft: #f4e8d9;
+            background:
+                radial-gradient(circle at 12% 8%, rgba(154, 67, 39, 0.14), transparent 30%),
+                linear-gradient(180deg, #fffaf2 0%, #f8efe4 100%);
+        }
+
+        .restaurant-hero {
+            grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+            align-items: stretch;
+        }
+
+        .restaurant-hero h1 {
+            max-width: 780px;
+        }
+
+        .hero-copy {
+            display: flex;
+            min-height: 620px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-badges,
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 26px;
+        }
+
+        .hero-badges span,
+        .service-tags span {
+            border: 1px solid rgba(154, 67, 39, 0.22);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.68);
+            color: var(--accent-dark);
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            padding: 9px 13px;
+            text-transform: uppercase;
+        }
+
+        .restaurant-visual {
+            position: relative;
+            min-height: 620px;
+            overflow: hidden;
+            border: 1px solid rgba(85, 36, 22, 0.14);
+            border-radius: 8px;
+            box-shadow: 0 28px 70px rgba(76, 39, 23, 0.18);
+        }
+
+        .restaurant-visual img {
+            width: 100%;
+            height: 100%;
+            min-height: 620px;
+            object-fit: cover;
+            filter: saturate(1.05) contrast(1.02);
+        }
+
+        .reservation-card {
+            position: absolute;
+            right: 22px;
+            bottom: 22px;
+            width: min(360px, calc(100% - 44px));
+            border: 1px solid rgba(255, 255, 255, 0.48);
+            border-radius: 8px;
+            background: rgba(255, 250, 242, 0.92);
+            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.24);
+            padding: 22px;
+            backdrop-filter: blur(16px);
+        }
+
+        .reservation-card h2,
+        .plate-card h3,
+        .experience-card h3 {
+            margin: 6px 0 10px;
+            font-family: Georgia, serif;
+            color: var(--ink);
+        }
+
+        .reservation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin: 18px 0;
+        }
+
+        .reservation-grid div,
+        .hours-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.76);
+            padding: 13px;
+        }
+
+        .reservation-grid strong,
+        .hours-card strong {
+            display: block;
+            color: var(--ink);
+            font-size: 0.95rem;
+        }
+
+        .reservation-grid span,
+        .hours-card span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 22px;
+        }
+
+        .section-header h2 {
+            max-width: 680px;
+            margin: 8px 0 0;
+        }
+
+        .section-header p {
+            max-width: 430px;
+            margin: 0;
+        }
+
+        .plate-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .plate-card {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fffdf8;
+            box-shadow: 0 18px 38px rgba(76, 39, 23, 0.08);
+        }
+
+        .plate-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .plate-card div {
+            padding: 18px;
+        }
+
+        .plate-card p,
+        .experience-card p,
+        .hours-card p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .price-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 14px;
+            color: var(--accent-dark);
+            font-weight: 900;
+        }
+
+        .feature-band {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+            gap: 24px;
+            align-items: stretch;
+            border: 1px solid rgba(154, 67, 39, 0.18);
+            border-radius: 8px;
+            background: #2b1710;
+            color: #fffaf2;
+            overflow: hidden;
+        }
+
+        .feature-band img {
+            width: 100%;
+            height: 100%;
+            min-height: 430px;
+            object-fit: cover;
+        }
+
+        .feature-copy {
+            padding: clamp(26px, 5vw, 56px);
+        }
+
+        .feature-copy .eyebrow,
+        .feature-copy p {
+            color: rgba(255, 250, 242, 0.78);
+        }
+
+        .feature-copy h2 {
+            color: #fffaf2;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .experience-card {
+            min-height: 270px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fffdf8;
+            padding: 26px;
+        }
+
+        .hours-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .map-panel {
+            min-height: 330px;
+            border-radius: 8px;
+            background:
+                linear-gradient(rgba(43, 23, 16, 0.18), rgba(43, 23, 16, 0.5)),
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80") center/cover;
+        }
+
+        .footer-cta {
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .restaurant-hero,
+            .feature-band,
+            .hours-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-copy,
+            .restaurant-visual,
+            .restaurant-visual img {
+                min-height: auto;
+            }
+
+            .restaurant-visual img {
+                height: 540px;
+            }
+
+            .section-header,
+            .experience-grid,
+            .plate-grid {
+                grid-template-columns: 1fr;
+                display: grid;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .restaurant-visual img {
+                height: 470px;
+            }
+
+            .reservation-card {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                width: auto;
+                margin: -95px 14px 16px;
+            }
+
+            .reservation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body class="restaurant-theme">
     <div class="sample-shell">
         <nav class="sample-nav" aria-label="Sample navigation">
-            <a class="brand" href="../index.html">Cedar Table</a>
+            <a class="brand" href="../index.html">Marrow & Hearth</a>
             <ul>
                 <li><a href="#menu">Menu</a></li>
-                <li><a href="#story">Story</a></li>
-                <li><a href="#contact">Reserve</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#visit">Visit</a></li>
                 <li><a class="back-link" href="../../index.html#samples">Uplift</a></li>
             </ul>
         </nav>
+
         <main>
-            <section class="hero">
-                <div class="reveal">
-                    <span class="eyebrow">Neighborhood dining</span>
-                    <h1>Seasonal plates, warm service, and a table worth gathering around.</h1>
-                    <p>A polished restaurant homepage template built for menus, reservations, location details, and a strong first impression on mobile.</p>
+            <section class="hero restaurant-hero">
+                <div class="hero-copy reveal">
+                    <span class="eyebrow">Modern restaurant service</span>
+                    <h1>A warm dining room for dates, celebrations, and unforgettable neighborhood dinners.</h1>
+                    <p>Use this polished template for restaurants, cafes, bistros, caterers, and private chefs. It is built to sell the atmosphere first, then move guests toward the menu and reservations.</p>
                     <div class="hero-actions">
-                        <a class="button" href="#contact">Book a Table</a>
-                        <a class="button secondary" href="#menu">View Menu</a>
+                        <a class="button" href="#visit">Reserve a Table</a>
+                        <a class="button secondary" href="#menu">Explore Menu</a>
+                    </div>
+                    <div class="hero-badges" aria-label="Restaurant highlights">
+                        <span>Seasonal menu</span>
+                        <span>Private dining</span>
+                        <span>Open Tue-Sun</span>
                     </div>
                 </div>
-                <div class="photo-card reveal reveal-delay-1">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Restaurant table with warm lighting">
-                    <div class="photo-note">
-                        <span class="eyebrow">Preview</span>
-                        <h2>Chef-led dining</h2>
-                        <p>A visual first impression for reservations, events, and signature dishes.</p>
+
+                <div class="restaurant-visual reveal reveal-delay-1">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Chef plating food in a warm restaurant kitchen">
+                    <aside class="reservation-card" aria-label="Reservation preview">
+                        <span class="eyebrow">Tonight</span>
+                        <h2>Tables available from 6:30 PM</h2>
+                        <p>Feature your reservation link, phone number, delivery partner, or ordering platform in this space.</p>
+                        <div class="reservation-grid">
+                            <div><strong>Chef's counter</strong><span>6 seats</span></div>
+                            <div><strong>Private room</strong><span>Up to 24 guests</span></div>
+                        </div>
+                        <a class="button" href="tel:+15551234567">Call to Reserve</a>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="section" id="menu">
+                <div class="section-header reveal">
+                    <div>
+                        <span class="eyebrow">Signature plates</span>
+                        <h2>Make the food feel premium before guests even read the full menu.</h2>
+                    </div>
+                    <p>Beautiful dish cards help visitors understand the cuisine, price point, and mood quickly on mobile.</p>
+                </div>
+                <div class="plate-grid">
+                    <article class="plate-card reveal">
+                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=900&q=80" alt="Elegant plated seafood and vegetables">
+                        <div>
+                            <span class="eyebrow">Starter</span>
+                            <h3>Charred tomato burrata</h3>
+                            <p>Smoked sea salt, basil oil, toasted sourdough, and late-summer tomatoes.</p>
+                            <div class="price-line"><span>Guest favorite</span><strong>$16</strong></div>
+                        </div>
+                    </article>
+                    <article class="plate-card reveal reveal-delay-1">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Seasonal dinner entree on a restaurant table">
+                        <div>
+                            <span class="eyebrow">Main</span>
+                            <h3>Herb roasted salmon</h3>
+                            <p>Crisp skin salmon, preserved lemon rice, fennel, and brown butter vinaigrette.</p>
+                            <div class="price-line"><span>Seasonal</span><strong>$29</strong></div>
+                        </div>
+                    </article>
+                    <article class="plate-card reveal reveal-delay-2">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80" alt="Restaurant dessert with berries and cream">
+                        <div>
+                            <span class="eyebrow">Dessert</span>
+                            <h3>Olive oil citrus cake</h3>
+                            <p>Whipped mascarpone, candied orange, pistachio crumble, and local honey.</p>
+                            <div class="price-line"><span>House made</span><strong>$12</strong></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section feature-band" id="story">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" alt="Warm restaurant bar and dining room">
+                <div class="feature-copy reveal">
+                    <span class="eyebrow">The dining story</span>
+                    <h2>Show guests the feeling of the room, not just a list of dishes.</h2>
+                    <p>Restaurants win bookings when people can picture the night. This section works well for chef stories, sourcing, wine programs, live music, tasting menus, or a family-owned brand introduction.</p>
+                    <div class="service-tags">
+                        <span>Chef-led kitchen</span>
+                        <span>Natural wines</span>
+                        <span>Locally sourced</span>
                     </div>
                 </div>
             </section>
-            <section class="section split" id="menu">
-                <div class="reveal"><span class="eyebrow">Menu highlights</span><h2>Simple sections that make ordering easy.</h2><p>Swap the sample dishes with the client's best sellers and add online ordering or reservation links.</p></div>
-                <div class="menu-list reveal reveal-delay-1"><div class="list-row"><strong>Roasted tomato burrata</strong><span>$16</span></div><div class="list-row"><strong>Charred salmon with herb rice</strong><span>$28</span></div><div class="list-row"><strong>Wild mushroom rigatoni</strong><span>$24</span></div><div class="list-row"><strong>Lemon olive oil cake</strong><span>$11</span></div></div>
+
+            <section class="section" id="events">
+                <div class="section-header reveal">
+                    <div>
+                        <span class="eyebrow">Restaurant services</span>
+                        <h2>Built for more than dinner reservations.</h2>
+                    </div>
+                    <p>Use these blocks to promote higher-value services like private dining, catering, and tasting experiences.</p>
+                </div>
+                <div class="experience-grid">
+                    <article class="experience-card reveal">
+                        <span class="eyebrow">Private dining</span>
+                        <h3>Celebrations, launches, and family milestones.</h3>
+                        <p>Present room capacity, menu options, minimum spend, and a clear inquiry path for groups.</p>
+                    </article>
+                    <article class="experience-card reveal reveal-delay-1">
+                        <span class="eyebrow">Catering</span>
+                        <h3>Restaurant-quality service brought to guests.</h3>
+                        <p>Highlight boxed lunches, corporate events, weddings, tastings, delivery zones, and custom menus.</p>
+                    </article>
+                </div>
             </section>
-            <section class="section grid-3">
-                <article class="card reveal"><strong>Local ingredients</strong><p>Feature farms, suppliers, or seasonal sourcing.</p></article>
-                <article class="card reveal reveal-delay-1"><strong>Private events</strong><p>Add catering, parties, and group booking details.</p></article>
-                <article class="card reveal reveal-delay-2"><strong>Easy reservations</strong><p>Link to phone, OpenTable, Square, or a contact form.</p></article>
+
+            <section class="section split" aria-label="Menu highlights">
+                <div class="reveal">
+                    <span class="eyebrow">Menu preview</span>
+                    <h2>Easy-to-scan rows for popular dishes, drinks, or specials.</h2>
+                    <p>Keep the homepage focused, then link to a full PDF menu, online ordering page, or reservation platform.</p>
+                </div>
+                <div class="menu-list reveal reveal-delay-1">
+                    <div class="list-row"><strong>Wild mushroom rigatoni</strong><span>$24</span></div>
+                    <div class="list-row"><strong>Steak frites with peppercorn jus</strong><span>$34</span></div>
+                    <div class="list-row"><strong>Seared scallops with corn veloute</strong><span>$31</span></div>
+                    <div class="list-row"><strong>Zero-proof rosemary spritz</strong><span>$9</span></div>
+                    <div class="list-row"><strong>Chocolate budino with sea salt</strong><span>$13</span></div>
+                </div>
+            </section>
+
+            <section class="section hours-layout" id="visit">
+                <div class="hours-card reveal">
+                    <span class="eyebrow">Visit us</span>
+                    <h2>Make the final step simple.</h2>
+                    <p>Replace this sample content with the real address, hours, reservation link, parking notes, delivery buttons, and contact details.</p>
+                    <div class="menu-list" style="margin-top: 20px;">
+                        <div class="list-row"><strong>Tuesday - Thursday</strong><span>5 PM - 10 PM</span></div>
+                        <div class="list-row"><strong>Friday - Saturday</strong><span>5 PM - 11 PM</span></div>
+                        <div class="list-row"><strong>Sunday brunch</strong><span>10 AM - 2 PM</span></div>
+                    </div>
+                </div>
+                <div class="map-panel reveal reveal-delay-1" role="img" aria-label="Restaurant dining room atmosphere"></div>
             </section>
         </main>
+
         <section class="footer-cta" id="contact">
-            <div><h2>Ready for dinner?</h2><p>Open Tuesday to Sunday from 5 PM.</p></div>
+            <div>
+                <span class="eyebrow">Ready for dinner?</span>
+                <h2>Turn visitors into reservations with one clear call to action.</h2>
+                <p>Open Tuesday to Sunday. Private dining inquiries welcome.</p>
+            </div>
             <a class="button" href="tel:+15551234567">Call to Reserve</a>
         </section>
     </div>
