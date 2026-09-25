@@ -1,9 +1,11 @@
 const header=document.querySelector('#header');
 const menuButton=document.querySelector('.menu-button');
 const navigation=document.querySelector('#primary-nav');
-const closeMenu=()=>{menuButton?.setAttribute('aria-expanded','false');navigation?.classList.remove('open')};
-menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));navigation.classList.toggle('open',!open)});
+const menuLabel=menuButton?.querySelector('i');
+const closeMenu=()=>{menuButton?.setAttribute('aria-expanded','false');navigation?.classList.remove('open');document.body.classList.remove('menu-open');if(menuLabel)menuLabel.textContent='Open menu'};
+menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));navigation.classList.toggle('open',!open);document.body.classList.toggle('menu-open',!open);if(menuLabel)menuLabel.textContent=open?'Open menu':'Close menu'});
 navigation?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
 window.addEventListener('scroll',()=>header?.classList.toggle('scrolled',window.scrollY>20),{passive:true});
 const items=document.querySelectorAll('.reveal');
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver'in window)){items.forEach(item=>item.classList.add('visible'))}else{const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});items.forEach(item=>observer.observe(item))}
