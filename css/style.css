@@ -98,9 +98,9 @@ h1 em{background:linear-gradient(100deg,#05aeea,#075eff 55%,#7424ee);-webkit-bac
 
 
 /* Responsive hero headline */
-.hero-title{align-items:center;display:flex;flex-direction:column;font-size:clamp(3.4rem,6.4vw,6.35rem);letter-spacing:-.055em;line-height:.94;margin:0 auto;max-width:1100px;text-align:center;text-wrap:balance}
-.hero-title em,.hero-title span{display:block}
-.hero-title em{line-height:1.02}
-.hero-title span{margin-top:.08em}
-@media(max-width:760px){.hero-title{font-size:clamp(2.85rem,13vw,4.65rem);letter-spacing:-.045em;line-height:.98;max-width:680px;padding-inline:4px}.hero-title em{line-height:1.04}.hero-title span{margin-top:.14em}.kicker{margin-bottom:20px}.hero-lede{font-size:1.04rem;margin-bottom:28px;margin-top:26px}}
-@media(max-width:380px){.hero-title{font-size:clamp(2.65rem,12.8vw,3.15rem);letter-spacing:-.035em}}
+.hero-title{align-items:center;display:flex;flex-direction:column;font-size:clamp(3.25rem,6.15vw,6.1rem);letter-spacing:-.052em;line-height:.9;margin:0 auto;max-width:1120px;text-align:center}
+.hero-title em,.hero-title span{display:block;white-space:nowrap}
+.hero-title em{font-size:1.08em;line-height:.96}
+.hero-title span{font-size:.94em;line-height:1;margin-top:.13em}
+@media(max-width:760px){.hero-title{font-size:clamp(2.75rem,12.5vw,4.35rem);letter-spacing:-.04em;line-height:.98;max-width:680px;padding-inline:4px;text-wrap:balance}.hero-title em,.hero-title span{font-size:1em;white-space:normal}.hero-title em{line-height:1.03}.hero-title span{line-height:1.02;margin-top:.16em}.kicker{margin-bottom:20px}.hero-lede{font-size:1.04rem;margin-bottom:28px;margin-top:26px}}
+@media(max-width:380px){.hero-title{font-size:clamp(2.55rem,12.2vw,3rem);letter-spacing:-.03em}}
