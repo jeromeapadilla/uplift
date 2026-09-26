@@ -98,9 +98,11 @@ h1 em{background:linear-gradient(100deg,#05aeea,#075eff 55%,#7424ee);-webkit-bac
 
 
 /* Responsive hero headline */
-.hero-title{align-items:center;display:flex;flex-direction:column;font-size:clamp(3.25rem,6.15vw,6.1rem);letter-spacing:-.052em;line-height:.9;margin:0 auto;max-width:1120px;text-align:center}
+.hero-copy{padding-top:52px}
+.hero-title{align-items:center;display:flex;flex-direction:column;font-size:clamp(3.35rem,6.25vw,6.2rem);gap:.06em;letter-spacing:-.055em;line-height:.94;margin:0 auto;max-width:1120px;text-align:center}
 .hero-title em,.hero-title span{display:block;white-space:nowrap}
-.hero-title em{font-size:1.08em;line-height:.92}
-.hero-title span{font-size:.94em;line-height:.96;margin-top:-.015em}
-@media(max-width:760px){.hero-title{font-size:clamp(2.65rem,10.8vw,3.8rem);letter-spacing:-.035em;line-height:1;max-width:680px;padding-inline:8px;text-wrap:balance}.hero-title em,.hero-title span{font-size:1em;overflow:visible;white-space:normal}.hero-title em{line-height:1.12;padding-bottom:.08em}.hero-title span{line-height:1.04;margin-top:.04em}.kicker{font-size:.7rem;line-height:1.35;margin-bottom:20px}.hero-lede{font-size:1.04rem;margin-bottom:28px;margin-top:24px}}
-@media(max-width:380px){.hero-title{font-size:clamp(2.4rem,10.6vw,2.85rem);letter-spacing:-.025em}}
+.hero-title em{font-family:inherit;font-size:.82em;font-style:normal;font-weight:780;letter-spacing:-.04em;line-height:1.05}
+.hero-title span{font-size:1em;font-weight:900;line-height:.98}
+.hero-lede{margin-bottom:30px;margin-top:30px}
+@media(max-width:760px){.hero-copy{padding-top:28px}.hero-title{font-size:clamp(2.65rem,10.8vw,3.8rem);gap:.12em;letter-spacing:-.04em;line-height:1;max-width:680px;padding-inline:6px}.hero-title em,.hero-title span{overflow:visible;text-wrap:balance;white-space:normal}.hero-title em{font-size:.9em;letter-spacing:-.025em;line-height:1.06}.hero-title span{font-size:1em;line-height:1.02}.kicker{font-size:.68rem;line-height:1.4;margin:0 auto 18px;max-width:360px}.hero-lede{font-size:1.02rem;line-height:1.65;margin:24px auto 28px;max-width:570px}}
+@media(max-width:380px){.hero-title{font-size:clamp(2.35rem,10.4vw,2.8rem);letter-spacing:-.025em}}
