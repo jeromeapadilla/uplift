@@ -108,4 +108,4 @@ h1 em{background:linear-gradient(100deg,#05aeea,#075eff 55%,#7424ee);-webkit-bac
 
 
 /* Centered mobile header logo */
-@media(max-width:760px){.nav-wrap{justify-content:flex-end;position:relative}.nav-wrap>.brand{left:50%;margin:0;position:absolute;top:50%;transform:translate(-50%,-50%);z-index:1}.menu-button{position:relative;z-index:2}}
+@media(max-width:760px){.nav-wrap{justify-content:flex-end;position:relative}.nav-wrap>.brand{left:calc(50% - 18px);margin:0;position:absolute;top:50%;transform:translate(-50%,-50%);z-index:1}.menu-button{position:relative;z-index:2}}
