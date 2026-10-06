@@ -96,7 +96,6 @@ h1 em{background:linear-gradient(100deg,#05aeea,#075eff 55%,#7424ee);-webkit-bac
   .nav-cta{background:linear-gradient(120deg,#061f49 0%,#0a438f 68%,#3b247d 100%);border-radius:14px;box-shadow:0 12px 26px rgba(6,31,73,.24);margin-top:16px;padding:16px 20px;text-align:center}
 }
 
-
 /* Responsive hero headline */
 .hero-copy{padding-top:52px}
 .hero-title{font-size:clamp(3.2rem,6vw,5.95rem);font-weight:900;letter-spacing:-.052em;line-height:1.02;margin:0 auto;max-width:1080px;text-align:center;text-wrap:balance}
@@ -109,3 +108,45 @@ h1 em{background:linear-gradient(100deg,#05aeea,#075eff 55%,#7424ee);-webkit-bac
 
 /* Centered mobile header logo */
 @media(max-width:760px){.nav-wrap{justify-content:flex-end;position:relative}.nav-wrap>.brand{left:calc(50% - 18px);margin:0;position:absolute;top:50%;transform:translate(-50%,-50%);z-index:1}.menu-button{position:relative;z-index:2}}
+
+/* Mobile feature packages */
+.mobile-packages{background:#fff;border-top:1px solid var(--line);overflow:hidden;position:relative}
+.mobile-packages::before{background:radial-gradient(circle,rgba(7,94,255,.12) 0,rgba(122,34,244,.05) 42%,transparent 70%);border-radius:50%;content:"";height:640px;left:-290px;pointer-events:none;position:absolute;top:80px;width:640px}
+.mobile-packages-head{align-items:end;display:grid;gap:64px;grid-template-columns:1.35fr .65fr;margin-bottom:66px;position:relative}
+.mobile-packages-head h2{font-size:clamp(2.7rem,5.4vw,5rem);letter-spacing:-.06em;line-height:.96;margin-top:18px;max-width:790px}
+.mobile-packages-head>p{color:var(--muted);font-size:1.02rem;max-width:420px}
+.mobile-packages-layout{align-items:stretch;display:grid;gap:38px;grid-template-columns:.78fr 1.22fr}
+.mobile-preview{align-items:center;background:linear-gradient(145deg,#061f49 0%,#0754d8 62%,#6b25de 100%);border-radius:32px;display:flex;justify-content:center;min-height:730px;overflow:hidden;padding:48px;position:relative}
+.mobile-preview::before{border:1px solid rgba(255,255,255,.17);border-radius:50%;content:"";height:420px;position:absolute;right:-170px;top:-100px;width:420px}
+.phone-frame{background:#07152f;border:5px solid #07152f;border-radius:42px;box-shadow:0 30px 65px rgba(0,0,0,.34);max-width:290px;overflow:hidden;padding:0 8px 9px;position:relative;transform:rotate(-2deg);width:100%;z-index:1}
+.phone-top{align-items:center;color:#fff;display:flex;font-size:.58rem;font-weight:800;height:27px;justify-content:space-between;padding:0 11px}
+.phone-top i{background:#020814;border-radius:20px;height:17px;left:50%;position:absolute;top:6px;transform:translateX(-50%);width:70px}
+.phone-screen{background:#f8fbff;border-radius:31px;color:var(--navy);min-height:520px;padding:26px 20px}
+.app-brand{align-items:center;display:flex;font-size:.72rem;gap:9px}
+.app-brand span{background:linear-gradient(135deg,#13cfe9,#075eff 60%,#7a22f4);border-radius:10px;color:#fff;display:grid;font-size:.8rem;font-weight:900;height:30px;place-items:center;width:30px}
+.phone-screen>p{color:#708099;font-size:.62rem;font-weight:750;letter-spacing:.06em;margin-top:40px;text-transform:uppercase}
+.phone-screen>h3{font-size:1.75rem;letter-spacing:-.055em;line-height:1.02;margin:8px 0 32px}
+.app-action{align-items:center;background:#fff;border:1px solid #dce9f5;border-radius:14px;display:flex;font-size:.72rem;font-weight:800;justify-content:space-between;margin-top:10px;padding:14px}
+.app-action.primary-action{background:linear-gradient(120deg,#0cc7e8,#075eff);border:0;color:#fff}
+.app-stats{display:grid;gap:9px;grid-template-columns:1fr 1fr;margin-top:38px}
+.app-stats div{background:#eaf2ff;border-radius:14px;display:flex;flex-direction:column;padding:15px}
+.app-stats b{font-size:.78rem}.app-stats span{color:#718098;font-size:.55rem}
+.phone-home{background:#fff;border-radius:20px;height:4px;margin:7px auto 0;opacity:.85;width:78px}
+.mobile-preview-note{background:#fff;border-radius:17px;bottom:38px;box-shadow:0 18px 42px rgba(0,0,0,.2);display:flex;flex-direction:column;left:30px;padding:15px 18px;position:absolute;z-index:2}
+.mobile-preview-note span{color:var(--blue);font-size:.58rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.mobile-preview-note strong{font-size:.85rem;margin-top:3px}
+.mobile-pack-list{border-top:1px solid var(--line)}
+.mobile-pack{align-items:start;border-bottom:1px solid var(--line);display:grid;gap:25px;grid-template-columns:44px 1fr auto;min-height:226px;padding:34px 24px;transition:background .25s,border-color .25s,transform .25s}
+.mobile-pack:hover{background:#f5f9ff;transform:translateX(5px)}
+.mobile-pack.featured-mobile{background:linear-gradient(115deg,#f0fbff,#f4f1ff);border-color:#cfe0ff}
+.pack-number{color:var(--blue);font-size:.7rem;font-weight:900;padding-top:6px}
+.pack-label{color:var(--blue)!important;font-size:.67rem!important;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.pack-copy h3{font-size:clamp(1.45rem,2.2vw,2rem);letter-spacing:-.04em;margin:3px 0 8px}
+.pack-copy>p:not(.pack-label){color:var(--muted);font-size:.9rem;max-width:440px}
+.pack-copy ul{display:flex;flex-wrap:wrap;gap:7px 16px;list-style:none;margin-top:18px}
+.pack-copy li{color:#42516a;font-size:.72rem;font-weight:750}.pack-copy li::before{color:var(--blue);content:"✓";font-weight:900;margin-right:6px}
+.pack-link{align-self:center;color:var(--navy);font-size:.76rem;font-weight:850;text-decoration:none;white-space:nowrap}.pack-link span{color:var(--blue);margin-left:7px;transition:margin .2s}.pack-link:hover span{margin-left:12px}
+
+@media(max-width:1080px) and (min-width:761px){nav{gap:17px}.brand{width:160px}}
+@media(max-width:980px){.mobile-packages-head{gap:28px;grid-template-columns:1fr}.mobile-packages-layout{grid-template-columns:1fr}.mobile-preview{min-height:650px}}
+@media(max-width:760px){.mobile-packages-head{margin-bottom:42px}.mobile-preview{border-radius:24px;min-height:600px;padding:34px 20px}.phone-frame{max-width:270px}.mobile-preview-note{bottom:24px;left:18px}.mobile-pack{gap:12px;grid-template-columns:32px 1fr;padding:28px 8px}.pack-link{grid-column:2;margin-top:8px}.pack-copy ul{align-items:flex-start;flex-direction:column;gap:6px}}
+@media(max-width:420px){.mobile-preview{min-height:560px;padding-inline:8px}.phone-frame{max-width:250px}.phone-screen{min-height:480px}.mobile-preview-note{bottom:18px}.mobile-preview-note strong{font-size:.76rem}}
